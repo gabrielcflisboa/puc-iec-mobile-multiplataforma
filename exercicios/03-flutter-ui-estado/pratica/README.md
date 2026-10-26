@@ -55,6 +55,16 @@ Sem chave, o app usa a lista simulada (5 filmes). Para filmes reais: copie `.env
 cole sua chave do TMDB (`TMDB_KEY=...`) e rode `./rodar.sh` / `rodar.bat` (ou F5 → "dados reais TMDB").
 O `.env.local` não vai pro git. Os testes (`flutter test`) nunca usam a chave.
 
+## Evidências
+
+**Favoritos sobrevivem ao refresh (Firestore):**
+
+![Favorito após F5](evidencias/favorito-persistiu.png)
+
+**App offline (banner + lista do cache) e documento `favorites/meus-favoritos` com `ids: [1, 3]` no Firestore:**
+
+![Offline e Firestore](evidencias/offline.png)
+
 ## Entrega — Gabriel Campos Ferreira Lisboa
 
 `flutter analyze` limpo e `flutter test` 100% verde. Implementado: TASKs 1, 2, 4, 5, 6, 9 (UI + Riverpod + teste), 7 (código do Firestore em `favorites.dart`), 11, 12, 13, 14 e 15 (offline-first). Pendente apenas: Remote Config (TASK 8, adiada no enunciado) e os prints de evidência. `Firebase.initializeApp` e a persistência offline do Firestore (TASKs 3 e 10) estão em `main.dart`, com o projeto `filmes-flutter-gabriel`.
