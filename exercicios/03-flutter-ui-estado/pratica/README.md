@@ -54,3 +54,9 @@ Fork + PR no repo público; link no Canvas. O **J.A.R.V.I.S.** lê o seu código
 Sem chave, o app usa a lista simulada (5 filmes). Para filmes reais: copie `.env.local.example` → `.env.local`,
 cole sua chave do TMDB (`TMDB_KEY=...`) e rode `./rodar.sh` / `rodar.bat` (ou F5 → "dados reais TMDB").
 O `.env.local` não vai pro git. Os testes (`flutter test`) nunca usam a chave.
+
+## Entrega — Gabriel Campos Ferreira Lisboa
+
+`flutter analyze` limpo e `flutter test` 100% verde. Implementado: TASKs 1, 2, 4, 5, 6, 9 (UI + Riverpod + teste), 7 (código do Firestore em `favorites.dart`), 11, 12, 13, 14 e 15 (offline-first). Pendente: `Firebase.initializeApp` em `main.dart` (TASK 3/10) e Remote Config (TASK 8, adiada), que dependem do meu projeto Firebase pessoal (`flutterfire configure`).
+
+**Local × cloud × offline-first.** Estado local (Riverpod em memória) é o mais rápido e funciona sem rede, mas morre no reload e fica preso ao aparelho. Estado em cloud (Firestore) persiste e sincroniza entre abas e dispositivos, porém depende de rede e adiciona latência e custo de configuração. Offline-first combina os dois: a UI lê sempre do cache local (com TTL), atualiza em segundo plano e guarda escritas numa fila que resolve conflitos e é enviada quando a rede volta — mais complexo, mas o app continua útil sem internet e a nuvem vira apenas fonte de sincronização.
