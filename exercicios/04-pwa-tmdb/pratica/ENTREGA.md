@@ -2,7 +2,7 @@
 
 > Preencha e faça commit junto com o código. Esta parte vale 3 pts (avaliação manual no Canvas).
 
-**Nome:** <seu nome> · **GitHub:** <seu-login>
+**Nome:** Gabriel Campos Ferreira Lisboa · **GitHub:** gabrielcflisboa
 
 ---
 
@@ -28,10 +28,12 @@ Abra `https://pwa-tmdb-aula4.vercel.app` e compare com um site comum (ex.: themo
 
 `autoUpdate` × `prompt`: qual você escolheria para um app de **checkout** e para um app de **notícias**, e por quê? O que pode dar errado em cada escolha?
 
-<sua resposta>
+Para um app de **checkout** eu escolheria `prompt`: com `autoUpdate` o app pode recarregar no meio de um pagamento e o usuário perder o carrinho ou o formulário, ou ficar com JS novo conversando com uma API antiga. Com `prompt` o usuário atualiza quando termina a compra; o risco é ele nunca aceitar e ficar preso numa versão velha (com bug ou falha de segurança), então convém forçar a atualização em versões críticas.
+
+Para um app de **notícias** eu escolheria `autoUpdate`: não há estado sensível a perder, o conteúdo é só leitura e é melhor que todos vejam sempre a versão mais recente sem fricção. O risco é a página recarregar sozinha enquanto a pessoa lê um artigo, ou uma versão com bug ir para todos de uma vez.
 
 ## 4. Declaração de uso de IA
 
 Usei IA? Onde e como? (uso transparente é incentivado)
 
-<sua resposta>
+Usei o GitHub Copilot (assistente de IA) para implementar os TODOs 1–5 e redigir a reflexão; rodei `npm test` e `npm run build` para validar. Os prints de evidência (seções 1 e 2) precisam ser feitos manualmente no navegador.
