@@ -12,17 +12,15 @@ Abra `https://pwa-tmdb-aula4.vercel.app` e compare com um site comum (ex.: themo
 
 | # | Site comum | PWA | Print/evidência |
 |---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
+| 1 | Sem rede, o navegador mostra a página de erro "sem internet" | O app abre e mostra a lista de filmes e os pôsteres, servidos pelo Service Worker (DevTools → Rede: coluna "Cumprido por" = ServiceWorker, 0 B transferidos) | [offline-pwa.png](evidencias/offline-pwa.png) |
+| 2 | Cada visita refaz todas as requisições à rede | A API usa NetworkFirst e os pôsteres CacheFirst: ficam nos caches `tmdb-api` e `tmdb-images` e carregam sem rede | [cache-storage.png](evidencias/cache-storage.png) |
+| 3 | Vive só numa aba do navegador, com barra de endereço | Tem manifest e botão "Instalar": vira app instalado, com ícone e janela própria (standalone) | Banner "Instale o app" visível nos prints |
 
 ## 2. Prova do offline no SEU build
 
-- [ ] Print do **DevTools → Application → Cache Storage** com `tmdb-api` e `tmdb-images` (com itens)
-- [ ] Print do app em **modo avião** carregando a lista
-- [ ] Print do aviso **"Nova versão disponível"** (ou explique por que não conseguiu reproduzir)
-
-(Coloque os prints numa pasta `evidencias/` e referencie aqui.)
+- [x] Cache Storage com `tmdb-api` e `tmdb-images`: [evidencias/cache-storage.png](evidencias/cache-storage.png)
+- [x] App em modo offline (Rede → Offline) carregando a lista: [evidencias/offline-pwa.png](evidencias/offline-pwa.png)
+- [ ] Aviso "Nova versão disponível": não reproduzi nesta entrega; o `UpdatePrompt` está implementado com `useRegisterSW` (`needRefresh`, `offlineReady`, `updateServiceWorker`) e `registerType: 'prompt'`.
 
 ## 3. Reflexão (5–8 linhas)
 
